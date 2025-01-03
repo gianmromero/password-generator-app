@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'JetBrains Mono Bold';
-    src: url('starter-code/assets/fonts/static/JetBrainsMono-Bold.ttf') format('ttf');
+    src: url('starter-code/assets/fonts/static/JetBrainsMono-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -8,18 +8,20 @@
 :root {
     --dark-grey: #24232C;
     --light-grey: #817D92;
-    --lighter-grey: #E6E5EA;
+    --almost-white: #E6E5EA;
     --very-dark-blue: #18171F;
     --lime-green: #A4FFAF;
     --red: #F64A4A;
     --orange: #FB7C58;
     --yellow: #F8CD65;
+    --background: #08070B;
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'JetBrains Mono Bold', sans-serif;
 }
 
 body {
@@ -28,4 +30,46 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    background-color: var(--background);
+}
+
+.title {
+    font-size: 1rem;
+    color: var(--light-grey);
+    margin-bottom: 1em;
+}
+
+.generator {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "output"
+    "input";
+    row-gap: 1em;
+    /* background-color: var(--dark-grey); */
+}
+
+.generator__header {
+    background-color: var(--dark-grey);
+    grid-area: output;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: auto;
+    grid-template-areas:
+    "password copy-icon";
+    padding: 1.2em;
+}
+.generator__password {
+    font-size: 1.5rem;
+    color: var(--almost-white);
+}
+.generator__copy-icon {
+    justify-self: end;
+}
+
+
+.generator__main {
+    background-color: var(--dark-grey);
+    grid-area: input;
 }
