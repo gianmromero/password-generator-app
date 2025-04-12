@@ -1,133 +1,185 @@
 @font-face {
-    font-family: 'JetBrains Mono Bold';
-    src: url('starter-code/assets/fonts/static/JetBrainsMono-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+  font-family: "JetBrains Mono Bold";
+  src: url("starter-code/assets/fonts/static/JetBrainsMono-Bold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
 
 :root {
-    --dark-grey: #24232C;
-    --light-grey: #817D92;
-    --almost-white: #E6E5EA;
-    --very-dark-grey: #18171F;
-    --lime-green: #A4FFAF;
-    --red: #F64A4A;
-    --orange: #FB7C58;
-    --yellow: #F8CD65;
-    --background: #08070B;
+  --dark-grey: #24232c;
+  --light-grey: #817d92;
+  --almost-white: #e6e5ea;
+  --very-dark-grey: #18171f;
+  --lime-green: #a4ffaf;
+  --red: #f64a4a;
+  --orange: #fb7c58;
+  --yellow: #f8cd65;
+  --background: #08070b;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'JetBrains Mono Bold', sans-serif;
-    color: var(--almost-white);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "JetBrains Mono Bold", sans-serif;
+  color: var(--almost-white);
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--background);
 }
 
 .title {
-    font-size: 1rem;
-    color: var(--light-grey);
-    margin-bottom: 1em;
+  font-size: 1rem;
+  color: var(--light-grey);
+  margin-bottom: 1em;
 }
 
 .generator {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas: 
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
     "output"
     "input";
-    row-gap: 1em;
-    /* background-color: var(--dark-grey); */
+  row-gap: 1em;
+  /* background-color: var(--dark-grey); */
 }
 
 .generator__header {
-    grid-area: output;
-    background-color: var(--dark-grey);
-    grid-area: output;
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: auto;
-    grid-template-areas:
-    "password copy-icon";
-    padding: 1.2em;
+  grid-area: output;
+  background-color: var(--dark-grey);
+  grid-area: output;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: auto;
+  grid-template-areas: "password copy-icon";
+  padding: 1.2em;
 }
 .generator__password {
-    font-size: 1.5rem;
-    
+  font-size: 1.5rem;
 }
 .generator__copy-icon {
-    justify-self: end;
+  justify-self: end;
 }
 
-
 .generator__main {
-    grid-area: input;
-    background-color: var(--dark-grey);
-    grid-area: input;
-    padding: 1.2em;
+  grid-area: input;
+  background-color: var(--dark-grey);
+  grid-area: input;
+  padding: 1.2em;
 }
 
 .generator__form {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(4, auto);
-    grid-template-areas: 
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
     "length"
     "options"
     "display"
     "generate-button";
-    
 }
 
 .generator__form-group_length {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas: 
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
     "label output"
     "slider slider";
-    row-gap: 0.5125em;
-    margin-bottom: 2em;
+  row-gap: 0.5125em;
+  margin-bottom: 2em;
 }
 
 .generator__form-text {
-    grid-area: label;
-    font-size: 1rem;
+  grid-area: label;
+  font-size: 1rem;
 }
 .generator__form-text_number {
-    grid-area: output;
-    justify-self: end;
-    font-size: 1.5rem;
-    color: var(--lime-green);
+  grid-area: output;
+  justify-self: end;
+  font-size: 1.5rem;
+  color: var(--lime-green);
 }
 .generator__form-slider {
-    grid-area: slider;
-    width: 100%;
-    appearance: none;
-    height: 8px;
-    background: var(--very-dark-grey);
+  grid-area: slider;
+  width: 100%;
+  appearance: none;
+  height: 8px;
+  background: var(--very-dark-grey);
 }
 .generator__form-slider::-webkit-slider-thumb {
-    appearance: none;
-    width: 28px;
-    height: 28px;
-    background: var(--almost-white);
-    border-radius: 50%;
-    cursor: pointer;
-    margin-top: -10px;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  background: var(--almost-white);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -10px;
 }
 .generator__form-slider::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 8px;
+  width: 100%;
+  height: 8px;
+}
+
+/* Hide the native checkbox */
+.generator__form-checkbox {
+  display: none;
+}
+
+/* Style the custom checkbox container */
+.generator__form-custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  gap: 8px; /* Space between the checkbox and the label text */
+}
+
+/* Style the custom checkbox visual */
+.checkbox-visual {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--almost-white);
+  background-color: var(--dark-grey);
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Add the checkmark inside the checkbox visual */
+.checkbox-visual::after {
+  content: "✔";
+  font-size: 12px;
+  color: var(--very-dark-grey);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.2s ease;
+}
+
+/* When the checkbox is checked, style the checkbox visual */
+.generator__form-checkbox:checked + .checkbox-visual {
+  background-color: var(--lime-green);
+  border-color: var(--lime-green);
+}
+
+/* When the checkbox is checked, show the checkmark */
+.generator__form-checkbox:checked + .checkbox-visual::after {
+  opacity: 1; /* Make the checkmark visible */
+}
+
+.generator__form-group_strength {
+    margin-top: 2em;
 }
