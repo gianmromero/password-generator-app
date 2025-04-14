@@ -89,6 +89,7 @@ body {
     "generate-button";
 }
 
+/* Form slider */
 .generator__form-group_length {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -126,12 +127,19 @@ body {
   cursor: pointer;
   margin-top: -10px;
 }
+
 .generator__form-slider::-webkit-slider-runnable-track {
   width: 100%;
   height: 8px;
+  /* background: var(--lime-green); */
+}
+.generator__form-slider::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  /* background: var(--lime-green); */
 }
 
-/* Hide the native checkbox */
+/* Form checkboxes */
 .generator__form-checkbox {
   display: none;
 }
