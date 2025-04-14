@@ -188,6 +188,56 @@ body {
   opacity: 1; /* Make the checkmark visible */
 }
 
+/* Password Strength bars */
 .generator__form-group_strength {
-    margin-top: 2em;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "strength medium bars";
+  align-items: center;
+  background-color: var(--very-dark-grey);
+  
+  padding: 17px 12px 15px 14px;
+  
+  margin-top: 2em;
+  margin-bottom: 16px;
+}
+
+.generator__form-text_color-grey {
+  grid-area: strength;
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--light-grey);
+  text-transform: uppercase;
+
+  justify-self: start;
+}
+
+.generator__form-text_strength-state {
+  grid-area: medium;
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--almost-white);
+  text-transform: uppercase;
+
+  justify-self: end;
+}
+
+/* Strength bars */
+.generator__strength-bars {
+  grid-area: bars;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  align-items: stretch;
+  justify-content: end;
+}
+
+
+.generator__strength-bar {
+  width: 10px;
+  height: 28px;
+  border: 2px solid var(--almost-white);
+  margin-right: 5px;
+
 }
