@@ -241,3 +241,14 @@ body {
   margin-right: 5px;
 
 }
+
+/* Form button */
+.generator__form-button {
+  background: var(--lime-green);
+  color: var(--dark-grey);
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  padding: 16px 18px 18px 14px;
+}
